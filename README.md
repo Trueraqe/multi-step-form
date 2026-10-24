@@ -4,7 +4,7 @@ A multi-step sign-up form built as a Frontend Mentor challenge. Users move throu
 
 ![Screenshot](./screenshot.png)
 
-**Live demo:** [add your link here]
+**Live demo:** https://multi-step-form-tawny-one.vercel.app/
 
 ## Features
 - Four-step flow with Next / Go Back navigation
@@ -26,8 +26,8 @@ A multi-step sign-up form built as a Frontend Mentor challenge. Users move throu
 ## Getting started
 
 ```bash
-git clone https://github.com/Trueraqe/[repo-name].git
-cd [repo-name]
+git clone https://github.com/Trueraqe/multi-step-form.git
+cd multi-step-form
 npm install
 npm run dev
 ```

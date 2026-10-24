@@ -1,9 +1,11 @@
 export default function StepsSideBar({
 	step,
 	number,
+	hasNav = true,
 }: {
 	step: React.ReactNode;
 	number: number;
+	hasNav?: boolean;
 }) {
 	const current =
 		"inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-500 bg-blue-200 text-black [&_p]:text-black [&_p]:font-bold";
@@ -56,7 +58,9 @@ export default function StepsSideBar({
 					</li>
 				</ol>
 			</aside>
-			<section className="relative -mt-15 sm:mt-0 sm:flex sm:flex-col sm:w-[435px] w-[calc(100%-2rem)] p-7 sm:p-0 pt-5 sm:pt-0 pb-24 sm:pb-0 bg-white rounded-xl items-center m-auto">
+			<section
+				className={`relative -mt-15 sm:mt-0 sm:flex sm:flex-col sm:w-[435px] w-[calc(100%-2rem)] p-7 sm:p-0 ${hasNav ? "pt-5 pb-24" : "py-12"} sm:pt-0 sm:pb-0 bg-white rounded-xl items-center m-auto`}
+			>
 				{step}
 			</section>
 		</>

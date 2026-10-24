@@ -66,7 +66,7 @@ function App() {
 
 	return (
 		<>
-			<main className="sm:flex w-full overflow-hidden sm:h-[600px] sm:w-[950px] items-center sm:p-4 sm:bg-white sm:rounded-xl m-auto sm:mt-[100px]">
+			<main className="sm:flex w-full overflow-hidden sm:h-[600px] sm:w-[950px] sm:p-4 sm:bg-white sm:rounded-xl m-auto sm:mt-[100px]">
 				<Routes>
 					<Route
 						path="/"
@@ -155,7 +155,7 @@ function App() {
 					/>
 					<Route
 						path="/step_5"
-						element={<StepsSideBar number={4} step={<Step5 />} />}
+						element={<StepsSideBar number={4} hasNav={false} step={<Step5 />} />}
 					/>
 				</Routes>
 			</main>
