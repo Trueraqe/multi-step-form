@@ -30,8 +30,8 @@ export default function Step2({
 				paragraf="You have the option of monthly or yearly billing."
 			/>
 
-			<div className="flex flex-col sm:h-[370px] sm:w-[435px] gap-8">
-				<fieldset className="flex flex-col sm:flex-row gap-[15px]">
+			<div className="flex flex-col lg:h-[370px] lg:w-[435px] gap-8">
+				<fieldset className="flex flex-col lg:flex-row gap-[15px]">
 					<legend className="sr-only">Select your plan</legend>
 
 					<SelectPlanCard
@@ -91,7 +91,7 @@ export default function Step2({
 				text1="Go Back"
 				path2="/step_3"
 				text2="Next Step"
-				lock={false}
+				blocked={false}
 			/>
 		</>
 	);

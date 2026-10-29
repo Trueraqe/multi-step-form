@@ -5,7 +5,7 @@ export default function Buttons(props: {
 	text1: string;
 	path2: string;
 	text2: string;
-	lock: boolean;
+	blocked: boolean;
 }) {
 	const stepBack = (
 		<Link
@@ -18,7 +18,7 @@ export default function Buttons(props: {
 
 	const stepForward = (
 		<>
-			{props.lock ? (
+			{props.blocked ? (
 				<button
 					type="submit"
 					className="w-30 text-white bg-blue-950 p-3 text-center rounded-md hover:bg-blue-900 hover:cursor-pointer"
@@ -37,12 +37,12 @@ export default function Buttons(props: {
 	);
 	return (
 		<>
-			<div className="hidden sm:flex flex-shrink-0 sm:w-[435px] items-center justify-between">
+			<div className="hidden lg:flex flex-shrink-0 lg:w-[435px] items-center justify-between">
 				{stepBack}
 				{stepForward}
 			</div>
 
-			<div className="block sm:hidden flex flex-shrink-0 items-center justify-between fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg z-50">
+			<div className="block lg:hidden flex flex-shrink-0 items-center justify-between fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg z-50">
 				{stepBack}
 				{stepForward}
 			</div>

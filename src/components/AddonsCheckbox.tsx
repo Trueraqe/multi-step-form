@@ -14,7 +14,7 @@ export default function AddonsCheckbox(props: AddonsCheckboxProps) {
 		<>
 			<label
 				htmlFor={props.id}
-				className="flex items-center sm:p-4 p-3 px-4 mb-4  justify-between border rounded-md cursor-pointer hover:border-purple-600 has-[:checked]:border-purple-600 has-[:checked]:bg-gray-50"
+				className="flex items-center lg:p-4 p-3 px-4 mb-4  justify-between border rounded-md cursor-pointer hover:border-purple-600 has-[:checked]:border-purple-600 has-[:checked]:bg-gray-50"
 			>
 				<div className="flex flex-row gap-5 items-center">
 					<input

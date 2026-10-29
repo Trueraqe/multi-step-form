@@ -19,7 +19,7 @@ export default function Step4(props: Step4Props) {
 				paragraf="Double-check everything looks OK before confirming."
 			/>
 
-			<div className="sm:h-[370px] sm:w-[435px]">
+			<div className="lg:h-[370px] lg:w-[435px]">
 				<div className="bg-gray-50 rounded rounded-md text-gray-500">
 					<div className="flex items-center justify-between p-5">
 						<div>
@@ -61,7 +61,7 @@ export default function Step4(props: Step4Props) {
 				text1="Go Back"
 				path2="/step_5"
 				text2="Confirm"
-				lock={false}
+				blocked={false}
 			/>
 		</>
 	);

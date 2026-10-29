@@ -66,7 +66,7 @@ function App() {
 
 	return (
 		<>
-			<main className="sm:flex w-full overflow-hidden sm:h-[600px] sm:w-[950px] sm:p-4 sm:bg-white sm:rounded-xl m-auto sm:mt-[100px]">
+			<main className="lg:flex w-full overflow-hidden lg:h-[600px] lg:w-[950px] lg:p-4 lg:bg-white lg:rounded-xl m-auto lg:mt-[100px]">
 				<Routes>
 					<Route
 						path="/"
@@ -155,11 +155,14 @@ function App() {
 					/>
 					<Route
 						path="/step_5"
-						element={<StepsSideBar number={4} hasNav={false} step={<Step5 />} />}
+						element={
+							<StepsSideBar number={4} hasNav={false} step={<Step5 />} />
+						}
 					/>
 				</Routes>
+				
 			</main>
-			<footer className="px-2 sm:px-0 text-center">
+			<footer className="px-2 lg:px-0 pb-20 lg:pb-0 text-center">
 				Challenge by{" "}
 				<Link
 					to="https://www.frontendmentor.io?ref=challenge"

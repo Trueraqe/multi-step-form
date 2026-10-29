@@ -23,8 +23,8 @@ export default function SelectPlanCard(props: {
 					onChange={props.func}
 					className="sr-only peer"
 				/>
-				<div className="flex sm:flex-col sm:gap-9 gap-4 sm:max-h-full sm:w-[135px] py-3 pl-4 sm:pt-4 rounded-md border border-gray-500 hover:border-purple-600 peer-checked:bg-gray-50 peer-checked:border-purple-600">
-					<img src={props.src} alt={props.alt} width={40} height={40} />
+				<div className="flex lg:flex-col lg:gap-9 gap-4 lg:max-h-full lg:w-[135px] py-3 pl-4 lg:pt-4 rounded-md border border-gray-500 hover:border-purple-600 peer-checked:bg-gray-50 peer-checked:border-purple-600 peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-purple-600">
+					<img src={props.src} alt="" width={40} height={40} />
 					<div>
 						<h2 className="text-blue-950 font-bold">{props.plan}</h2>
 						<p className="text-gray-500 text-sm">

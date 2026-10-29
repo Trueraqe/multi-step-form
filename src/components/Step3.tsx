@@ -25,7 +25,7 @@ export default function Step3({
 				title="Pick add-ons"
 				paragraf="Add-ons help enhance your gaming experience."
 			/>
-			<fieldset className="flex flex-col sm:h-[370px] sm:w-[435px]">
+			<fieldset className="flex flex-col lg:h-[370px] lg:w-[435px]">
 				<legend className="sr-only">Pick add-ons</legend>
 				<AddonsCheckbox
 					id="online-service"
@@ -66,7 +66,7 @@ export default function Step3({
 				text1="Go Back"
 				path2="/step_4"
 				text2="Next Step"
-				lock={false}
+				blocked={false}
 			/>
 		</>
 	);

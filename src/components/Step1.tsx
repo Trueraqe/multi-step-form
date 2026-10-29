@@ -3,6 +3,7 @@ import InfoInput from "./InfoInput";
 import StepTitle from "./StepTitle";
 import Buttons from "./Buttons";
 import type { Dispatch, SetStateAction } from "react";
+import { useNavigate } from "react-router-dom";
 
 type Step1Props = {
 	name: string;
@@ -17,24 +18,22 @@ export default function Step1(props: Step1Props) {
 	const [nameError, setNameError] = useState(false);
 	const [emailError, setEmailError] = useState(false);
 	const [numberError, setNumberError] = useState(false);
+	const [emailErrorMessage, setEmailErrorMessage] = useState("required");
 
-	const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		if (!props.name.trim()) {
-			setNameError(true);
-		} else {
-			setNameError(false);
-		}
-		if (!props.email.trim()) {
-			setEmailError(true);
-		} else {
-			setEmailError(false);
-		}
-		if (!props.number.trim()) {
-			setNumberError(true);
-		} else {
-			setNumberError(false);
-		}
+	const navigate = useNavigate();
+
+	const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+	e.preventDefault(); 
+	const nameMissing = !props.name.trim(); 
+	const emailInvalid = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(props.email.trim()); 
+	const numberMissing = !props.number.trim(); 
+
+	setNameError(nameMissing); 
+	setEmailError(emailInvalid); 
+	setNumberError(numberMissing);
+	setEmailErrorMessage(!props.email.trim() ? "required" : "invalid")
+
+	if (!nameMissing && !emailInvalid && !numberMissing) navigate("/step_2");
 	};
 
 	return (
@@ -44,8 +43,8 @@ export default function Step1(props: Step1Props) {
 				paragraf="Please provide your name, email address, and phone number."
 			/>
 
-			<form onSubmit={handleSubmit}>
-				<div className="flex flex-col sm:h-[370px] sm:w-[435px]">
+			<form onSubmit={handleSubmit} noValidate>
+				<div className="flex flex-col lg:h-[370px] lg:w-[435px]">
 					<InfoInput
 						label="Name"
 						id="name"
@@ -53,6 +52,7 @@ export default function Step1(props: Step1Props) {
 						value={props.name}
 						placeholder="e.g. Stephen King"
 						error={nameError}
+						setError={"required"}
 						func={(e) => props.setName(e.target.value)}
 					/>
 
@@ -63,6 +63,8 @@ export default function Step1(props: Step1Props) {
 						value={props.email}
 						placeholder="e.g. stephenking@lorem.com"
 						error={emailError}
+						setError={emailErrorMessage}
+						errorMessage="Enter a valid email address"
 						func={(e) => props.setEmail(e.target.value)}
 					/>
 
@@ -73,6 +75,7 @@ export default function Step1(props: Step1Props) {
 						value={props.number}
 						placeholder="e.g. +1 234 567 890"
 						error={numberError}
+						setError={"required"}
 						func={(e) => props.setNumber(e.target.value)}
 					/>
 				</div>
@@ -82,9 +85,7 @@ export default function Step1(props: Step1Props) {
 					text1=""
 					path2="/step_2"
 					text2="Next Step"
-					lock={
-						!props.name.trim() || !props.email.trim() || !props.number.trim()
-					}
+					blocked={true}
 				/>
 			</form>
 		</>
